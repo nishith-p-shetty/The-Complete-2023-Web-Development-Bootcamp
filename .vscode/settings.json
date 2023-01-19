@@ -1,5 +1,9 @@
 {
     "prettier.tabWidth": 4,
     "prettier.useTabs": true,
-    "code-runner.runInTerminal": true
+    "code-runner.runInTerminal": true,
+    "html.format.indentInnerHtml": true,
+    "html-css-class-completion.enableEmmetSupport": true,
+    "liveServer.settings.useWebExt": true,
+    "tailwindCSS.emmetCompletions": true
 }
