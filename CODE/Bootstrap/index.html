@@ -7,59 +7,62 @@
         
         <title>Bootstrap</title>
         
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Ubuntu&display=swap" rel="stylesheet">
+        
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;900&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/styles.css">
+        
     </head>
 
     <body>
         <section id="title">
             <!--NAVBAR START-->
-            <nav class="navbar navbar-dark bg-dark navbar-expand-sm fixed-top">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
-                        <img src="/favicon.ico" alt="favicon">
-                        TinDog
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapsableContent" aria-controls="collapsableContent" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="collapsableContent">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link active dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">Link</a>
-                                <ul class="dropdown-menu bg-dark">
-                                    <li><a class="dropdown-item text-white" href="/">Root</a></li>
-                                    <li><a class="dropdown-item text-white" href="/CODE">Projects</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link active">Contact</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="" class="nav-link active">Pricing</a>
-                            </li>
-                        </ul>
+            <div class="container-fluid">
+                <nav class="navbar navbar-dark navbar-expand-sm">
+                        <a class="navbar-brand" href="#">
+                            <i class="fa-solid fa-dog"></i> TinDog
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsableContent" aria-controls="collapsableContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="collapsableContent">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Link</a>
+                                    <ul class="dropdown-menu bg-dark">
+                                        <li><a class="dropdown-item text-white" href="/">Root</a></li>
+                                        <li><a class="dropdown-item text-white" href="/CODE">Projects</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link active">Contact</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="" class="nav-link active">Pricing</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!--NAVBAR END-->
+                    <br>
+                    <!-- Title -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h1>Meet new and interesting dogs nearby.</h1>
+                            <button type="button download-button" class="btn btn-dark btn-lg"><i class="fa-brands fa-apple"></i> Download</button>
+                            <button type="button download-button" class="btn btn-outline-light btn-lg"><i class="fa-brands fa-google-play"></i> Download</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <img class="title-image" src="images/iphone6.png" alt="iphone-mockup">
+                        </div>
                     </div>
                 </div>
-            </nav>
-            <!--NAVBAR END-->
-            <br><br><br>
-            <!-- Title -->
-
-            <div>
-                <h1>Meet new and interesting dogs nearby.</h1>
-                <button type="button">Download</button>
-                <button type="button">Download</button>
-            </div>
-            <div>
-                <img src="images/iphone6.png" alt="iphone-mockup">
-            </div>
-
-        </section>
+            </section>
 
 
         <!-- Features -->
