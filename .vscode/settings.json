@@ -5,5 +5,6 @@
     "html.format.indentInnerHtml": true,
     "html-css-class-completion.enableEmmetSupport": true,
     "liveServer.settings.useWebExt": true,
-    "tailwindCSS.emmetCompletions": true
+    "tailwindCSS.emmetCompletions": true,
+    "prettier.bracketSameLine": true
 }
