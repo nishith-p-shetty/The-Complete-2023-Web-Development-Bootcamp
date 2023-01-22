@@ -4,7 +4,7 @@
     "code-runner.runInTerminal": true,
     "html.format.indentInnerHtml": true,
     "html-css-class-completion.enableEmmetSupport": true,
-    "liveServer.settings.useWebExt": true,
+    "liveServer.settings.useWebExt": false,
     "tailwindCSS.emmetCompletions": true,
     "prettier.bracketSameLine": true
 }
