@@ -16,12 +16,14 @@ for (var i = 0 ; i < (document.querySelectorAll(".drum").length) ; i++)
 {
     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
         soundOP(this.textContent);
+        animOP(this.textContent);
     });
 }
 
 document.addEventListener("keydown", function (event)
 {
     soundOP(event["key"]);
+    animOP(event["key"]);
 });
 
 
@@ -67,4 +69,14 @@ function soundOP(key)
         default:
             break;
     }
+}
+
+function animOP(key)
+{
+    var btn = document.querySelector("." + key);
+    btn.classList.add("pressed");
+    setTimeout( function ()
+    {
+        btn.classList.remove("pressed");
+    }, 200);
 }
