@@ -18,20 +18,20 @@
 	</head>
 	<body class="text-center">
 		<main class="form-signin w-100 m-auto">
-			<form>
+			<form action="/" method="post">
 				<img class="mb-4" src="images/Memoji.png" alt="" width="72" height="72" />
 				<h1 class="h3 mb-3 fw-normal">Signup to My Newsletter!</h1>
 
 				<div class="form-floating">
-                    <input type="text" class="form-control" placeholder="First Name" autofocus/>
+                    <input type="text" name="fname" class="form-control" placeholder="First Name" autofocus/>
 					<label for="floatingPassword">First Name</label>
 				</div>
                 <div class="form-floating">
-                    <input type="text" class="form-control" placeholder="Last Name" />
+                    <input type="text" name="lname" class="form-control" placeholder="Last Name" />
 					<label for="floatingPassword">Last Name</label>
 				</div>
                 <div class="form-floating">
-                    <input type="email" class="form-control" placeholder="name@example.com" />
+                    <input type="email" name="email" class="form-control" placeholder="name@example.com" />
                     <label for="floatingInput">Email address</label>
                 </div>
 				<button class="w-100 btn btn-lg btn-primary" type="submit">
