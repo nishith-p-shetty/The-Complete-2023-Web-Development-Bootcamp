@@ -3,6 +3,7 @@ const express = require('express');
 const app =  express();
 const https = require('https');
 const port =  3000;
+const path = require('path');
 const endpoint = 'https://api.openweathermap.org/data/2.5/weather?q=';
 const params = '&units=metric&appid=';
 const apikey = '7b20c89ecb33037c66977b01cc8b40cf';
@@ -11,6 +12,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
+    res.sendFile(path.join(__dirname, '/index.html'));
 });
 
 app.post("/", (req, res) => {
