@@ -1,28 +1,26 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const app =  express();
+const app = express();
 
 app.set('view engine', 'ejs');
 
 var options = {
     weekday: 'long',
-    year: 'numeric', 
-    month: 'long', 
+    year: 'numeric',
+    month: 'long',
     day: 'numeric',
 };
 
-app.get('/day', (req, res)=> {
+app.get('/day', (req, res) => {
     var today = new Date();
     var cd = '', work = '';
     var daystr = today.toLocaleDateString('en-US', options);
-    if (today.getDay() === 0 || today.getDay() === 6)
-    {
+    if (today.getDay() === 0 || today.getDay() === 6) {
         cd = 'Weekend';
         work = 'Enjoy';
     }
-    else
-    {
+    else {
         cd = 'Weekday';
         work = 'Work';
     }
