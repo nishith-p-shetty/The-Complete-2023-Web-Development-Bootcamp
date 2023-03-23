@@ -3,7 +3,11 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(bodyParser.urlencoded({extended: true}));
+
 app.set('view engine', 'ejs');
+
+let items = [];
 
 var options = {
     weekday: 'long',
@@ -24,7 +28,7 @@ app.get('/day', (req, res) => {
         cd = 'Weekday';
         work = 'Work';
     }
-    res.render('list', {
+    res.render('listday', {
         daytype: cd,
         daywork: work,
         dayno: today.getDay(),
@@ -32,9 +36,24 @@ app.get('/day', (req, res) => {
     });
 });
 
+
+
+
 app.get('/', (req, res) => {
-    res.send('/');
-})
+    res.render('index', {itemsh: items});
+});
+
+app.post('/', (req, res) => {
+    items.push(req.body.newItem);
+    //console.log(items);
+    //res.render('index', {itemsh: items});
+    res.redirect('/');
+});
+
+
+
+
+
 
 
 app.listen(8000, () => {
