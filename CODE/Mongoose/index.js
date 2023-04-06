@@ -60,17 +60,18 @@ const orange = new Fruit({
 Fruit.insertMany([kiwi, orange, banana]);
 
 
-run().catch(error => console.log(error.stack));
-async function run() {
-    const res = await Fruit.find();
-
-    const aa = await Person.updateOne({ _id: '642dbfc7eb642cef5285e6b9' }, { name: 'Nishith P Shetty' });
-    console.log(aa);
-
-    mongoose.connection.close();
-    console.log(res);
-    res.forEach(function(fruit) {
-        console.log(fruit.name);
+Fruit.find().then(fruits => {
+        fruits.forEach(function (fruit) {
+            console.log(fruit.name);
+        });
+    })
+    .catch(err => {
+        console.error(err);
+    })
+    .finally(() => {
+        mongoose.connection.close();
     });
-}
+
+//const aa = await Person.updateOne({ _id: '642dbfc7eb642cef5285e6b9' }, { name: 'Nishith P Shetty' });
+
 
