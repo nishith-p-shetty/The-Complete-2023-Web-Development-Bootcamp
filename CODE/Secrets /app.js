@@ -72,5 +72,5 @@ app.route('/register')
     });
 
 app.listen(PORT, () => {
-    console.log("Server started on " + PORT);
+    console.log("Server started on port " + PORT);
 });
