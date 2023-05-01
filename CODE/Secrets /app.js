@@ -3,7 +3,10 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const ejs = require('ejs');
 const mongoose = require('mongoose');
+const md5 = require('md5');
 const encrypt = require('mongoose-encryption');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const app = express();
 
@@ -38,12 +41,14 @@ app.route('/login')
         User.findOne({ email: req.body.username })
             .then((foundUser) => {
                 if (foundUser) {
-                    if (foundUser.password === req.body.password){
-                        res.render('secrets');
-                    }
-                    else{
-                        res.redirect('/login');
-                    }
+                    bcrypt.compare(md5(req.body.password), foundUser.password, function(err, result) {
+                        if (result === true){
+                            res.render('secrets');
+                        }
+                        else{
+                            res.redirect('/login');
+                        }
+                    });
                 }
                 else{
                     res.redirect('/register');
@@ -59,16 +64,19 @@ app.route('/register')
         res.render('register');
     })
     .post((req, res) => {
-        const tempUsr = new User({
-            email: req.body.username,
-            password: req.body.password,
-        });
-        tempUsr.save()
-            .then((result) => {
-                res.render('secrets');
-            }).catch((err) => {
-                res.status(500).send(err);
+        bcrypt.hash(md5(req.body.password), saltRounds, function(err, hash) {
+            const tempUsr = new User({
+                email: req.body.username,
+                password: hash,
             });
+            tempUsr.save()
+                .then((result) => {
+                    res.render('secrets');
+                }).catch((err) => {
+                    res.status(500).send(err);
+                });
+        });        
+
     });
 
 app.listen(PORT, () => {
