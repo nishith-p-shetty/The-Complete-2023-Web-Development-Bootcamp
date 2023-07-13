@@ -4,11 +4,13 @@ import Header from './Header';
 import Note from './Note';
 import Footer from './Footer';
 
+import notes from '../notes';
+
 function App() {
     return (
         <>
             <Header />
-            <Note />
+            {notes.map(x => <Note key={x.key} title={x.title} content={x.content}/>)}
             <Footer />
         </>
     );
